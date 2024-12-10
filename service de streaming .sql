@@ -91,4 +91,9 @@ CREATE TABLE review(
     FROM movie
     ORDER BY Duration DESC
     LIMIT 5;
+    --7.Agrégation :
+    SELECT Movie.MovieID,movie.Titel,AVG(ComplitionPercentage)
+    FROM movie INNER JOIN watchhistory
+    ON movie.MovieID=watchhistory.movieID
+    GROUP BY watchhistory.movieID;
     
