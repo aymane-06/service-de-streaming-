@@ -74,3 +74,7 @@ CREATE TABLE review(
     UPDATE users 
     SET subscriptionID=1
     WHERE subscriptionID=2;
+    --4.Afficher les abonnements :
+    SELECT u.FirstName,u.LastName, S.SubscriptionType
+    FROM users u INNER JOIN subscription s
+    ON u.subscriptionID=s.SubscriptionID;
