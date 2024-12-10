@@ -82,3 +82,8 @@ CREATE TABLE review(
     FROM users u INNER JOIN subscription s
     ON u.subscriptionID=s.SubscriptionID;
     --5.Filtrer les visionnages:
+    SELECT users.FirstName,users.LastName,watchhistory.ComplitionPercentage
+    FROM users INNER JOIN watchhistory
+    ON users.UserID=WatchHistory.UserID
+    WHERE watchhistory.ComplitionPercentage=100;
+    
