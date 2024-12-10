@@ -59,4 +59,18 @@ CREATE TABLE review(
     FOREIGN KEY(MovieID) REFERENCES movie(MovieID),
     Rating INT NOT NULL,
     ReviewText TEXT,
-    ReviewDate Date); 
+    ReviewDate Date);
+
+
+    --1.Insérer un film:
+    INSERT INTO movie(Titel,Genre,Duration,Rating,ReleaseYear) 
+    VALUES('I Am Legend','Science Adventures',101,'PG-13',2007); 
+
+    --2.Rechercher des films:
+    SELECT * 
+    FROM movie
+    WHERE Genre='Comedy'AND ReleaseYear>2020;
+    --3.Mise à jour des abonnements:
+    UPDATE users 
+    SET subscriptionID=1
+    WHERE subscriptionID=2;
