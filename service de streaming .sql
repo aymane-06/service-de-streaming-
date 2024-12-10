@@ -34,6 +34,9 @@ CREATE TABLE watchhistory(
     WatchHistoryID INT AUTO_INCREMENT PRIMARY KEY,
     WatchDate DATE NOT NULL,
     ComplitionPercentage int NOT NUll);
+    --ComplitionPercentage add check:
+    ALTER TABLE watchhistory
+    ADD CONSTRAINT CHECK(ComplitionPercentage BETWEEN 0 AND 100); 
     --add colume userID FK to users(userID):
     ALTER TABLE watchhistory ADD COLUME UserID;
     ALTER TABLE watchhistory ADD CONSTRAINT ALTER TABLE watchhistory ADD CONSTRAINT FOREIGN KEY (UserID) REFERENCES users(UserID);
@@ -78,3 +81,4 @@ CREATE TABLE review(
     SELECT u.FirstName,u.LastName, S.SubscriptionType
     FROM users u INNER JOIN subscription s
     ON u.subscriptionID=s.SubscriptionID;
+    --5.Filtrer les visionnages:
