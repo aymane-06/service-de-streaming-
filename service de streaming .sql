@@ -86,4 +86,9 @@ CREATE TABLE review(
     FROM users INNER JOIN watchhistory
     ON users.UserID=WatchHistory.UserID
     WHERE watchhistory.ComplitionPercentage=100;
+    --6.Trier et limiter:
+    SELECT Titel,Duration
+    FROM movie
+    ORDER BY Duration DESC
+    LIMIT 5;
     
