@@ -37,6 +37,9 @@ CREATE TABLE watchhistory(
     --add colume userID FK to users(userID):
     ALTER TABLE watchhistory ADD COLUME UserID;
     ALTER TABLE watchhistory ADD CONSTRAINT ALTER TABLE watchhistory ADD CONSTRAINT FOREIGN KEY (UserID) REFERENCES users(UserID);
+    --add colume movieID FK to movie(movieID):
+    ALTER TABLE watchhistory ADD COLUMN movieID INT NOT NULL;
+    ALTER TABLE watchhistory ADD CONSTRAINT FK_movieID FOREIGN KEY(movieID) REFERENCES movie(movieID);
 
         --Subscription:
 
