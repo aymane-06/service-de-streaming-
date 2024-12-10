@@ -96,4 +96,11 @@ CREATE TABLE review(
     FROM movie INNER JOIN watchhistory
     ON movie.MovieID=watchhistory.movieID
     GROUP BY watchhistory.movieID;
-    
+    --8.Group By :
+    SELECT COUNT(u.UserID) , s.SubscriptionType 
+    FROM users u 
+    INNER JOIN subscription s 
+    ON s.SubscriptionID= u.subscriptionID 
+    GROUP BY s.SubscriptionType
+    ORDER BY COUNT(u.UserID);
+
