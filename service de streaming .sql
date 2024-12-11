@@ -103,4 +103,17 @@ CREATE TABLE review(
     ON s.SubscriptionID= u.subscriptionID 
     GROUP BY s.SubscriptionType
     ORDER BY COUNT(u.UserID);
+    --9.Sous-requête:
+    SELECT movie.Titel , FLOOR(AVG(review.Rating))
+    FROM movie INNER JOIN review
+    ON movie.MovieID=review.MovieID
+    GROUP BY movie.Titel
+    HAVING AVG(review.Rating)>4;
+
+    --10.Self-Join:
+    SELECT m1.Titel, m2.Titel, m1.ReleaseYear, m1.Genre
+    FROM movie m1 JOIN movie m2 
+    ON m1.MovieID!=m2.MovieID
+    WHERE m1.ReleaseYear=m2.ReleaseYear 
+    AND m1.Genre=m2.Genre;
 
